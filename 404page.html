@@ -168,9 +168,28 @@ a{
         <div class="text">
             <h1>404 Error</h1>  
           <h2>Couldn't launch :(</h2>
-             <h3>Page Not Found - lets take you <a  href="http://localhost:3000">Home</a></h3> 
+             <h3>Page Not Found - lets take you <a><p style="cursor: pointer;" id="homeRedirect"> Home </p></a></h3> 
         </div>
    
     
-</body> 
+</body>  <script>
+    document.getElementById('homeRedirect').addEventListener('click',()=>
+   {
+        
+        let link="";
+        let count=0;
+        for (let index = 0; index <=Array.from(window.location.href).length; index++) {
+        if(Array.from(window.location.href)[index]=='/'){count++;}
+        if(count>=3){ break;}
+        else{
+            link+=Array.from(window.location.href)[index];
+
+        }
+            
+        }
+        window.location.assign(link);
+       
+      
+    })
+</script>
 </html>
