@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.get('/',(req,res)=>{
     res.sendFile('./index.html',{root:__dirname});
 })
-app.use(express.static('../EVENTO'));
+app.use(express.static('./EVENTO1'));
 
 
 app.post('/loginSignup/login.html', urlencodedParser,async function (req, res) {
